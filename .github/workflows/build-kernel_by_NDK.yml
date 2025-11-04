@@ -56,7 +56,7 @@ jobs:
         echo "ENABLE_LXC=$(cat $CONFIG_ENV | grep -w "ENABLE_LXC" | head -n 1 | cut -d "=" -f 2)" >> $GITHUB_ENV
         echo "TCLANG_BRANCH=$(cat $CONFIG_ENV | grep -w "TCLANG_BRANCH" | head -n 1 | cut -d "=" -f 2)" >> $GITHUB_ENV
         echo "NDK_VERSION=$(cat $CONFIG_ENV | grep -w "NDK_VERSION" | head -n 1 | cut -d "=" -f 2)" >> $GITHUB_ENV
-
+        sudo apt-get install bison -y
 
     - name: Set swap to 10G
       uses: pierotofy/set-swap-space@master
