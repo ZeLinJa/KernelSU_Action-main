@@ -73,12 +73,9 @@ jobs:
         
     - name: Install make3.8.1
       run: |
-        wget https://ftp.gnu.org/gnu/make/make-3.8.1.tar.gz
-        tar -xzf make-3.8.1.tar.gz
-        cd make-3.8.1
-        ./configure
-        make
-        sudo make install
+        sudo add-apt-repository ppa:ubuntu-toolchain-r/test
+        sudo apt-get update
+        sudo apt-get install make-3.8.1
 
     - name: Download Android NDK
       run: |
